@@ -1,8 +1,8 @@
 module.exports ={
   "development": {
     "username": "express-mvp-dbuser",
-    "password": Splinyer7,
-    "database": "express-mvp-development",
+    "password": "Splinyer7",
+    "database": "express-mvp-db",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false,
