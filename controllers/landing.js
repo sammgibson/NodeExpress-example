@@ -2,7 +2,7 @@
 const models = require('../models');
 
 exports.getLanding = function(req, res, next){
-    res.render('landing', {title:'SMGBLOG'});
+    res.render('landing', {title:'SMGBLOG', user: req.user});
 }
 
 exports.submitLead = function(req, res, next){
