@@ -1,13 +1,15 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
-  form(action="/",method="POST")
-    input(name="lead_email", type="email", placeholder="Enter your email address")
-    button(type="submit") Submit
-  if leads
-    h1 Leads
+doctype html
+html(lang='en')
+  include common/head.pug 
+  +head("starter MVP")
+  body
+    h1= title
+    p Welcome to #{title}
+    form(action="/",method="POST")
+      input(name="lead_email", type="email", placeholder="Enter your email address")
+      button(type="submit") Submit
+    if leads
+      h1 Leads
       for lead in leads
         p(id=lead.id)
           span #{lead.email}
@@ -15,5 +17,8 @@ block content
           a(href="/lead/" + lead.id) Details
           |
           button(onclick=`deleteLead('${lead.id}')`) Delete
-  script(src='https://code.jquery.com/jquery-3.2.1.min.js')
-  script(src='/javascripts/leads.js')
+    include common/footer.pug
+    +footer()
+    script(src='/javascripts/leads.js')
+
+  
